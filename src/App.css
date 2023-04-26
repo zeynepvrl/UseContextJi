@@ -1,38 +1,73 @@
-.App {
-  text-align: center;
+.App{                           /*en kapsayıcı css classı */
+    display: flex;
+    flex-direction: column;
+    align-items: center;         /*flex direction column olduğu için dikey olarak ortalama kullandık*/
+}
+.task-create{
+    width: 450px;
+}
+.task-form{                    /* formun içeriğini alt alta yaptı*/
+    display: flex;
+    flex-direction: column;   
+}
+.task-label{
+    margin: 10px 0px;  /* ikili kullanımda ilki yukardan aşağıyı ikincisi soldan sağa olan boşluğu temsil eder*/
+}
+.task-input{
+    padding: 10px;  /*contentileborderaraındakiboşluk*/
+    border: 1px solid black;
+    border-radius:10px ;
+}
+.task-button{
+    margin: 10px 0px;
+    padding: 10px;
+    border: 1px solid white;
+    border-radius: 10px;
+    color: white;
+    font-size: 20px;
+    background-color: crimson;
+}
+.task-list{
+    display: flex;   /* flexde default flrx direction row dur, row iken ortalamak için justify-content kullanılır, column iken align-item*/
+    flex-wrap: wrap;  /*vite dolunca aşağı iner */
+    justify-content: center;
+}
+.task-show{
+    width: 350px;
+    border: 1px solid salmon;
+    border-radius: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+}
+.task-title{
+    margin-bottom: 5px;  /*başlıklar kopuk durmasın diye */
+}
+.task-delete{
+    border: none;
+    background-color: red;
+    padding: 5px;
+    font-size: 15px;
+    border-radius: 30px;
+    color: white;
+    margin-right: 10px;
+    width: 60px;
+}
+.task-edit{
+    border: none;
+    background-color: rgb(0, 4, 255);
+    padding: 5px;
+    font-size: 15px;
+    border-radius: 30px;
+    color: white;
+    margin-right: 10px;
+    width: 100px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+/*Bu CSS kodu, App adlı bir bileşik elemanın (component) stilini belirtiyor. display: flex ile App bileşeni, 
+içindeki elemanları sıralamak ve hizalamak için flexbox kullanıyor. flex-direction: column ile elemanlar dikey 
+olarak sıralanıyor, yani yukarıdan aşağıya doğru hizalanıyorlar. align-items: center ise dikey yönde 
+ortalanmalarını sağlıyor, yani elemanlar sayfanın ortasına hizalanıyorlar. Bu sayede, App bileşeni ve içindeki 
+diğer elemanlar sayfanın ortasında düzgün bir şekilde hizalanıyorlar.  */
