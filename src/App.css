@@ -6,6 +6,9 @@
 .task-create{
     width: 450px;
 }
+.task-update{
+    width: 100%;
+}
 .task-form{                    /* formun içeriğini alt alta yaptı*/
     display: flex;
     flex-direction: column;   
@@ -26,6 +29,9 @@
     color: white;
     font-size: 20px;
     background-color: crimson;
+}
+.update-button{
+    background-color:blueviolet;
 }
 .task-list{
     display: flex;   /* flexde default flrx direction row dur, row iken ortalamak için justify-content kullanılır, column iken align-item*/
