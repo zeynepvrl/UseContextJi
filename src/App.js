@@ -27,7 +27,7 @@ function App() {
     const response2 =await axios.get('http://localhost:3001/tasks');
     setTasks(response2.data);
   }
-  useEffect(()=>{
+  useEffect(()=>{         //ilk render da çalışır
     fetchTasks();
   },[]);
 
