@@ -1,14 +1,34 @@
 {
   "tasks": [
     {
-      "title": "cd",
-      "taskDesc": "cd",
+      "title": "React",
+      "taskDesc": "9. bölümü tamamla, projeyi dönüştür",
       "id": 1
     },
     {
-      "title": "grg",
-      "taskDesc": "dssdds",
+      "title": "JavaScript ",
+      "taskDesc": "1 saatlik tamamla\n",
+      "id": 2
+    },
+    {
+      "title": "Computer Network",
+      "taskDesc": "Biraz okuma yap.",
       "id": 3
+    },
+    {
+      "title": "Automta ",
+      "taskDesc": "1. pdfi tamamla",
+      "id": 4
+    },
+    {
+      "title": "Biraz dergi oku",
+      "taskDesc": "",
+      "id": 5
+    },
+    {
+      "title": "React",
+      "taskDesc": "Yeni Bir bölüm daha bitir\n",
+      "id": 6
     }
   ]
 }

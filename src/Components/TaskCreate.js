@@ -1,7 +1,10 @@
 import { useState } from "react";
+import { useContext } from "react";
+import TasksContext from "../context/task";
 
-function TaskCreate({ onCreate, task, taskformUpdate, onUpdate }) {        //burdaki task güncelle butonuna basıldığında, güncellenecek task ı taşıyor taskformupdate ise true yı taşıyor basıldığında 
+function TaskCreate({ task, taskformUpdate, onUpdate }) {        //burdaki task güncelle butonuna basıldığında, güncellenecek task ı taşıyor taskformupdate ise true yı taşıyor basıldığında 
   //props {} içinde taşınır  //son iki props editShow un true olduğu koşuldan geliyor
+  const{editTaskById,createTask}=useContext(TasksContext)
   const [title, setTitle] = useState(task ? task.title : '');  //güncelleye basılmışsa task.title yazdır , normal işleyişse boş kalsın
   const [taskDesc, setTaskDesc] = useState(task ? task.taskDesc : '');
 
@@ -17,7 +20,8 @@ function TaskCreate({ onCreate, task, taskformUpdate, onUpdate }) {        //bur
       onUpdate(task.id, title, taskDesc);
     }
     else{
-      onCreate(title, taskDesc); //onSubmit adında bir prop tanımladık, App js e aktarabilmek için, gönderdikten sonra form u boşaltsın diye =>
+      //onCreate(title, taskDesc); //onSubmit adında bir prop tanımladık, App js e aktarabilmek için, gönderdikten sonra form u boşaltsın diye =>
+      createTask(title, taskDesc)
     }
     setTitle("");
     setTaskDesc("");

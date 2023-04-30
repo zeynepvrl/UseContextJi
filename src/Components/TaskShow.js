@@ -1,17 +1,20 @@
 import TaskCreate from "./TaskCreate";
 import { useState } from "react";
+import { useContext } from "react";
+import TasksContext from "../context/task";
 
-function TaskShow({ onetaskforShow, onDelete, onUpd }) {        //onetaskforshow tasks ın içindeki bir tane task ı taşıyor
+function TaskShow({ onetaskforShow }) {        //onetaskforshow tasks ın içindeki bir tane task ı taşıyor
+  const {editTaskById, deleteTaskById}=useContext(TasksContext);
   const [showEdit, setShowEdit] = useState(false);     //bunu eğer aşağıdaki fonksiyonun hemen üstüne yazarsan algılamıyor
   const handleDeleteClick = () => {
-    onDelete(onetaskforShow.id); //onDelete adında bir prop oluşturdum ve bu silinecek taskın id sine eşit, // ve bu prop u task listte karşılamam gerekir
+    deleteTaskById(onetaskforShow.id); //onDelete adında bir prop oluşturdum ve bu silinecek taskın id sine eşit, // ve bu prop u task listte karşılamam gerekir
   }; 
   const handleEditClick = () => {
     setShowEdit(!showEdit);
   };
   const handleSubmit=(id, Updatedtitle, UpdatedtaskDec )=>{  //onUpdate ile 3 parametre sırasıyla bu patantezdeilere eşit olacak, isimleri farklı olsa da
     setShowEdit(false);
-    onUpd(id, Updatedtitle, UpdatedtaskDec); //bir üst class a taşımak için bir props oluşturduk
+    editTaskById(id, Updatedtitle, UpdatedtaskDec); //bir üst class a taşımak için bir props oluşturduk
   }
   return (
     <div className="task-show">
