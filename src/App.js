@@ -6,7 +6,7 @@ import TasksContext from "./context/task";
 
 function App() {
   const {fetchTasks}=useContext(TasksContext);
-  useEffect(()=>{         //ilk render da çalışır
+  useEffect(()=>{         // sadece ilk render da bir defa çalışır
     fetchTasks();
   },[]);
   
