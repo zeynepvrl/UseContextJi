@@ -6,6 +6,8 @@ const TasksContext = createContext();
 function Provider({ children }) {
   //children burda bu fonksiyona gelen bir parametreyi temsil ediyor, gelen ise verileri kapsayıcı component oluyor
   const [tasks, setTasks] = useState([]); //taskları içinde tutacak array
+
+  
   const createTask = async (title, taskDesc) => {
     //bunun parametleri onCreate nin parametlerine karşılık gelir  //bu parametreler taskcreate den geliyor
     const response = await axios.post("http://localhost:3000/tasks", {
@@ -18,11 +20,15 @@ function Provider({ children }) {
     ];
     setTasks(createNewArraywithnewTask);
   };
+
+  
   const fetchTasks = async () => {
     //async await yapısını uygulayabilmek için method oluşturduk
     const response2 = await axios.get("http://localhost:3000/tasks");
     setTasks(response2.data);
   };
+
+  
   const deleteTaskById = async (id) => {
     await axios.delete(`http://localhost:3000/tasks/${id}`); //'' değil `` bunu kullanmalısın içerdeki id yi değişken olarak kullanabilmek için
     const afterDeleting_TasksArray = tasks.filter((task) => {
@@ -32,6 +38,9 @@ function Provider({ children }) {
     });
     setTasks(afterDeleting_TasksArray);
   };
+
+
+  
   const editTaskById = async (gelenid, Updatedtitle, UpdatedtaskDec) => {
     await axios.put(`http://localhost:3000/tasks/${gelenid}`, {
       title: Updatedtitle,
@@ -47,6 +56,9 @@ function Provider({ children }) {
     });
     setTasks(updatedTasksArray);
   };
+
+
+  
   const sharedValuesAndMethods = {
     tasks,
     createTask,
